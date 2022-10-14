@@ -9,7 +9,7 @@ import 'helpers/helper.dart';
 void main() {
 
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  //FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp( AlfaApp());
 }
 
