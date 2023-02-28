@@ -103,90 +103,90 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     final eventid = ModalRoute.of(context)!.settings.arguments as Map<String,dynamic>;
-//print("ddddddd"+eventid.toString());
-if(Helper.type=="1"){
+    print("ddddddd"+eventid.toString());
+    if(Helper.type=="1"){
     return Scaffold(
     resizeToAvoidBottomInset: false,
     body: SingleChildScrollView(
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
-         child:Form(
-           key:_formkey,
-             child:Column(
-                children: <Widget>[
-                  Container(
-                   // margin: EdgeInsets.fromLTRB(0, 0, 5,5),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          //FlutterLogo(size: 100,),
-                          SvgPicture.asset(
-                            "assets/images/newlogo.svg",
-                            width: 50,
-                            height: 50,
-                          ),
-                            IconButton(
-                            onPressed: (){
-                              Navigator.pushNamed(context, "/menu");
-                              },
-                              icon: Icon(
-                              Icons.home, size: 30,color: Colors.orange,
-                              )
-                              ),
-                            ]
-                    ),
-                  ) ,
-                    SizedBox(height: 10,),
+    child: Container(
+    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+    child:Form(
+    key:_formkey,
+    child:Column(
+    children: <Widget>[
+    Container(
+    // margin: EdgeInsets.fromLTRB(0, 0, 5,5),
+    child: Row(
+    mainAxisSize: MainAxisSize.max,
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+    //FlutterLogo(size: 100,),
+    SvgPicture.asset(
+    "assets/images/newlogo.svg",
+    width: 50,
+    height: 50,
+    ),
+    IconButton(
+    onPressed: (){
+    Navigator.pushNamed(context, "/scanner");
+    },
+    icon: Icon(
+    Icons.home, size: 30,color: Colors.orange,
+    )
+    ),
+    ]
+    ),
+    ) ,
+    SizedBox(height: 10,),
     //Image(image: AssetImage('assets/images/UA_170_Logo.png'),width: 200,),
-                      Text('First Time User Registration',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue,
-                        ),
-                       textAlign: TextAlign.center,
-                      ),
-                  SizedBox(
-                  height: 15,
-                  ),
-                  TextFormField(
-                    style: TextStyle(height: 0,),
-                  controller: _fullnamecontroller,
-                  validator: (value) {
-                  if (value == null || value.isEmpty) {
-                  return 'Please enter name';
-                  }
-                  return null;
-                  },
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                  prefixIcon: Icon(Icons.account_circle_rounded,color: Colors.orange,),
-                  //labelText: "Full Name",
-                  hintText: "Full Name",
-                  fillColor: Colors.orange.shade50,
-                  filled: true,
-                      hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-                  //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-                  /*border: OutlineInputBorder(
+    Text('First Time User Registration',
+    style: TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.blue,
+    ),
+    textAlign: TextAlign.center,
+    ),
+    SizedBox(
+    height: 15,
+    ),
+    TextFormField(
+    style: TextStyle(height: 0,),
+    controller: _fullnamecontroller,
+    validator: (value) {
+    if (value == null || value.isEmpty) {
+    return 'Please enter name';
+    }
+    return null;
+    },
+    decoration: InputDecoration(
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    prefixIcon: Icon(Icons.account_circle_rounded,color: Colors.orange,),
+    //labelText: "Full Name",
+    hintText: "Full Name",
+    fillColor: Colors.orange.shade50,
+    filled: true,
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
+    /*border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                   borderSide: BorderSide(color: Colors.lightBlue),
                   ),*/
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      borderSide: BorderSide(
-                        color: Colors.orange,
-                      ),
-                    ),
-                       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-        errorBorder: new OutlineInputBorder(
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
     borderRadius: BorderRadius.circular(16),
     borderSide: BorderSide(
     color: Colors.deepPurple.shade200,
@@ -194,202 +194,202 @@ if(Helper.type=="1"){
     ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
-                  ),
-                  onChanged: (value){
-                  setState((){
-                  fullname=value;
-                  });
-                  },
-                  ),
-                  SizedBox(
-                  height: 15,
-                  ),
-                  DropdownButtonFormField(
-                  value: dropdownvalue1,
-                  validator: (value) {
-                    if (value == null || value=="Gender") {
-                    return 'Please select gender';
-                    }
-                    return null;
-                    },
-                  items: items1.map((String items) {
-                  return DropdownMenuItem(
-                  value: items,
-                  child: Text(items),
-                  );
-                  }).toList(),
-                  onChanged: (String? newValue) {
-                  setState(() {
-                  dropdownvalue1 = newValue!;
-                  });
-                  },
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                  prefixIcon: Icon(Icons.person, color: Colors.orange,),
-                  fillColor:Colors.orange.shade50,
-                  filled: true,
-                    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      borderSide: BorderSide(
-                        color: Colors.orange,
-                      ),
-                    ),
-                       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    ),
+    onChanged: (value){
+    setState((){
+    fullname=value;
+    });
+    },
+    ),
+    SizedBox(
+    height: 15,
+    ),
+    DropdownButtonFormField(
+    value: dropdownvalue1,
+    validator: (value) {
+    if (value == null || value=="Gender") {
+    return 'Please select gender';
+    }
+    return null;
+    },
+    items: items1.map((String items) {
+    return DropdownMenuItem(
+    value: items,
+    child: Text(items),
+    );
+    }).toList(),
+    onChanged: (String? newValue) {
+    setState(() {
+    dropdownvalue1 = newValue!;
+    });
+    },
+    decoration: InputDecoration(
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    prefixIcon: Icon(Icons.person, color: Colors.orange,),
+    fillColor:Colors.orange.shade50,
+    filled: true,
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
-                  ),
-                  ),
-                SizedBox(
-                height: 15,
-                ),
-              TextFormField(
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                return 'Please enter date of birth';
-                }
-                return null;
-                },
-              controller: dateInput,
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-              prefixIcon: Icon(Icons.calendar_today, color: Colors.orange,), //icon of text field
-             // labelText: "Enter DOB",
-              hintText: "Enter DOB",
-              fillColor:Colors.orange.shade50,
-              filled: true,
-              //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-                hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: BorderSide(
-                    color: Colors.orange,
-                  ),
-                ),
-                   enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    ),
+    ),
+    SizedBox(
+    height: 15,
+    ),
+    TextFormField(
+    validator: (value) {
+    if (value == null || value.isEmpty) {
+    return 'Please enter date of birth';
+    }
+    return null;
+    },
+    controller: dateInput,
+    decoration: InputDecoration(
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    prefixIcon: Icon(Icons.calendar_today, color: Colors.orange,), //icon of text field
+    // labelText: "Enter DOB",
+    hintText: "Enter DOB",
+    fillColor:Colors.orange.shade50,
+    filled: true,
+    //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
 
-              ),
+    ),
 
-              readOnly: true,
-              //set it true, so that user will not able to edit text
-              onTap: () async {
-              DateTime? pickedDate = await showDatePicker(
-              context: context,
-              initialDate: DateTime(2015),
-              firstDate: DateTime(1950),
-              //DateTime.now() - not to allow to choose before today.
-              lastDate: DateTime(2015));
+    readOnly: true,
+    //set it true, so that user will not able to edit text
+    onTap: () async {
+    DateTime? pickedDate = await showDatePicker(
+    context: context,
+    initialDate: DateTime(2015),
+    firstDate: DateTime(1950),
+    //DateTime.now() - not to allow to choose before today.
+    lastDate: DateTime(2015));
 
-              if (pickedDate != null) {
-              print(
-              pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
-              String formattedDate =
-              DateFormat('yyyy-MM-dd').format(pickedDate);
-              print(
-              formattedDate); //formatted date output using intl package =>  2021-03-16
-              setState(() {
-              dateInput.text =
-              formattedDate; //set output date to TextField value.
-              });
-              } else {}
-              },
+    if (pickedDate != null) {
+    print(
+    pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+    String formattedDate =
+    DateFormat('yyyy-MM-dd').format(pickedDate);
+    print(
+    formattedDate); //formatted date output using intl package =>  2021-03-16
+    setState(() {
+    dateInput.text =
+    formattedDate; //set output date to TextField value.
+    });
+    } else {}
+    },
 
-              ),
+    ),
 
     SizedBox(
     height: 15,
     ),
     TextFormField(
     validator: (value) {
-      if (value == null || value.isEmpty) {
-      return 'Please enter Address';
-      }
-      return null;
-      },
+    if (value == null || value.isEmpty) {
+    return 'Please enter Address';
+    }
+    return null;
+    },
     controller: _addresscontroller,
     keyboardType: TextInputType.multiline,
     textInputAction: TextInputAction.newline,
     maxLines: 5,
     minLines: 1,
     decoration: InputDecoration(
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
     prefixIcon: Icon(Icons.notes,color: Colors.orange,),
     //labelText: "Address",
     hintText: "Enter Address",
     fillColor: Colors.orange.shade50,
     filled: true,
     // labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-      hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-          color: Colors.orange,
-        ),
-      ),
-         enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
     ),
     onChanged: (value){
@@ -410,40 +410,40 @@ if(Helper.type=="1"){
     },
     controller: _citycontroller,
     decoration: InputDecoration(
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
     prefixIcon: Icon(Icons.location_city, color: Colors.orange,),
     //labelText: "City",
     hintText: "Enter City",
     fillColor: Colors.orange.shade50,
     filled: true,
     //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-      hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-          color: Colors.orange,
-        ),
-      ),
-         enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
     ),
     onChanged: (value){
@@ -457,47 +457,47 @@ if(Helper.type=="1"){
     ),
     TextFormField(
     validator: (value) {
-      if (value == null || value.isEmpty) {
-      return 'Please enter State';
-      }
-      return null;
-      },
+    if (value == null || value.isEmpty) {
+    return 'Please enter State';
+    }
+    return null;
+    },
     controller: _statecontroller,
     decoration: InputDecoration(
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
     prefixIcon: Icon(Icons.location_city, color: Colors.orange,),
     //labelText: "City",
     hintText: "Enter State",
     fillColor: Colors.orange.shade50,
     filled: true,
     //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-      hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-          color: Colors.orange,
-        ),
-      ),
-         enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
     ),
     onChanged: (value){
@@ -512,46 +512,46 @@ if(Helper.type=="1"){
     TextFormField(
     controller: _countrycontroller,
     validator: (value) {
-      if (value == null || value.isEmpty) {
-      return 'Please enter valid country';
-      }
-      return null;
-      },
+    if (value == null || value.isEmpty) {
+    return 'Please enter valid country';
+    }
+    return null;
+    },
     decoration: InputDecoration(
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
     prefixIcon: Icon(Icons.location_city, color: Colors.orange,),
     //labelText: "City",
     hintText: "Enter Country",
     fillColor: Colors.orange.shade50,
     filled: true,
     //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-      hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-          color: Colors.orange,
-        ),
-      ),
-         enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
     ),
     onChanged: (value){
@@ -565,47 +565,47 @@ if(Helper.type=="1"){
     ),
     TextFormField(
     validator: (value) {
-      if (value == null || value.isEmpty) {
-      return 'Please enter valid postal code';
-      }
-      return null;
-      },
+    if (value == null || value.isEmpty) {
+    return 'Please enter valid postal code';
+    }
+    return null;
+    },
     controller: _postalcodecontroller,
     decoration: InputDecoration(
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
     prefixIcon: Icon(Icons.pin_drop, color: Colors.orange,),
     //labelText: "City",
     hintText: "Enter Postal Code",
     fillColor:Colors.orange.shade50,
     filled: true,
     //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-      hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-          color: Colors.orange,
-        ),
-      ),
-         enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
     ),
     onChanged: (value){
@@ -620,40 +620,40 @@ if(Helper.type=="1"){
     controller: _emailcontroller,
     validator: (value)=>FieldValidator.validateEmail(value!),
     decoration: InputDecoration(
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
     prefixIcon: Icon(Icons.email_outlined, color: Colors.orange,),
     //labelText: "Email",
     hintText: "Enter Email",
     fillColor: Colors.orange.shade50,
     filled: true,
     //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-      hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-          color: Colors.orange,
-        ),
-      ),
-         enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
     ),
     onChanged: (value){
@@ -668,11 +668,11 @@ if(Helper.type=="1"){
     DropdownButtonFormField(
     value: marital,
     validator: (value) {
-      if (value == null || value=="-") {
-      return 'Please enter valid Marital status';
-      }
-      return null;
-      },
+    if (value == null || value=="-") {
+    return 'Please enter valid Marital status';
+    }
+    return null;
+    },
     items: items2.map((String items) {
     return DropdownMenuItem(
     value: items,
@@ -685,37 +685,37 @@ if(Helper.type=="1"){
     });
     },
     decoration: InputDecoration(
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
     prefixIcon: Icon(Icons.person, color: Colors.orange,),
     fillColor: Colors.orange.shade50,
     filled: true,
 
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-          color: Colors.orange,
-        ),
-      ),
-         enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
     ),
     ),
@@ -726,46 +726,46 @@ if(Helper.type=="1"){
     TextFormField(
     controller: anniversaryInput,
     validator: (value) {
-      if (value == null || (value.isEmpty && marital=="Married")) {
-      return 'Please enter anniversary date';
-      }
-      return null;
-      },
+    if (value == null || (value.isEmpty && marital=="Married")) {
+    return 'Please enter anniversary date';
+    }
+    return null;
+    },
     decoration: InputDecoration(
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
     prefixIcon: Icon(Icons.calendar_today, color: Colors.orange,), //icon of text field
-      // labelText: "Enter DOB",
-      hintText: "Enter Date",
+    // labelText: "Enter DOB",
+    hintText: "Enter Date",
     fillColor: Colors.orange.shade50,
     filled: true,
-      hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
     //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-          color: Colors.orange,
-        ),
-      ),
-         enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
 
     ),
@@ -813,38 +813,38 @@ if(Helper.type=="1"){
     });
     },
     decoration: InputDecoration(
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
     prefixIcon: Icon(Icons.person, color: Colors.orange,),
     fillColor: Colors.orange.shade50,
     filled: true,
-      hintText: "No of childs",
-      hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-          color: Colors.orange,
-        ),
-      ),
-         enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    hintText: "No of childs",
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
     ),
     ),
@@ -855,7 +855,7 @@ if(Helper.type=="1"){
     TextFormField(
     controller: _phonecontroller,
     decoration: InputDecoration(
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
     prefixIcon: Icon(Icons.phone, color: Colors.orange,
     ),
     //labelText: "Email",
@@ -863,41 +863,41 @@ if(Helper.type=="1"){
     fillColor: Colors.orange.shade50,
     filled: true,
     //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-      hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-          color: Colors.orange,
-        ),
-      ),
-         enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
     ),
-      validator: (value) {
-      if (value == null || value.isEmpty || value.length!=10) {
-      return 'Please enter valid phone number';
-      }
-      return null;
-      },
+    validator: (value) {
+    if (value == null || value.isEmpty || value.length!=10) {
+    return 'Please enter valid phone number';
+    }
+    return null;
+    },
     keyboardType: TextInputType.phone,
     onChanged: (value){
     setState((){
@@ -911,46 +911,46 @@ if(Helper.type=="1"){
     TextFormField(
     controller: _occupationcontroller,
     validator: (value) {
-      if (value == null || value.isEmpty) {
-      return 'Please enter Occupation';
-      }
-      return null;
-      },
+    if (value == null || value.isEmpty) {
+    return 'Please enter Occupation';
+    }
+    return null;
+    },
     decoration: InputDecoration(
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
     prefixIcon: Icon(Icons.laptop, color: Colors.orange,),
     //labelText: "Email",
     hintText: "Enter Occupation",
     fillColor: Colors.orange.shade50,
     filled: true,
     //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-      hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-          color: Colors.orange,
-        ),
-      ),
-         enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
     ),
     onChanged: (value){
@@ -1029,11 +1029,11 @@ if(Helper.type=="1"){
 
 
     ElevatedButton(
-   // color: wood_smoke,
+    // color: wood_smoke,
     //textColor: white,
-   //borderColor: wood_smoke,
-   // text: "Register",
-   /* onTap: () async{
+    //borderColor: wood_smoke,
+    // text: "Register",
+    /* onTap: () async{
     if (_formkey.currentState!.validate()) {
     var url = 'https://churchinapp.com/public/api/memberregister';
     final Map<String,String> data = {
@@ -1068,29 +1068,29 @@ if(Helper.type=="1"){
     //}
     }
     }, */
-      onPressed: () async{
-      if (_formkey.currentState!.validate()) {
+    onPressed: () async{
+    if (_formkey.currentState!.validate()) {
 
 
-     DateTime now = DateTime.now();
-     DateFormat formatter = DateFormat('M/d/y');
-     String formatted = formatter.format(now);
-     DateFormat formatter1 = DateFormat('jm');
-     String formatted1 = formatter1.format(now);
+    DateTime now = DateTime.now();
+    DateFormat formatter = DateFormat('M/d/y');
+    String formatted = formatter.format(now);
+    DateFormat formatter1 = DateFormat('jm');
+    String formatted1 = formatter1.format(now);
     //print(formatted);
 
-    var url = 'https://churchinapp.com/public/api/memberregister';
+    var url = 'https://churchinapp.com/api/memberregister';
     final Map<String,String> data = {"entry_date":formatted,"entry_time":formatted1,
     'qrcode':eventid["value"],"member_type":Helper.type.toString(),"name":fullname,"gender":dropdownvalue1,"dob":dateInput.text,"address":address,"city":city,"state":state_1,"pincode":postalcode,"country":country,"marital_status":marital,"wed_anniversary":anniversaryInput.text,"no_of_child":children,"email":email,"phone_no":phone,"occupation":occupation,"referred_by":referred_by};
-        print("testing data"+data.toString());
-  /*  setState(()
+    print("testing data"+data.toString());
+    /*  setState(()
         {
           vaue.text=json.encode({"data":encryption(json.encode(data))}).toString();
         });*/
-  Map<String,String> dat={"data":encryption(json.encode(data))};
+    Map<String,String> dat={"data":encryption(json.encode(data))};
     print("testing data"+dat.toString());
-  try{
-        final response = await http.post(Uri.parse(url),
+    try{
+    final response = await http.post(Uri.parse(url),
     body: json.encode(dat),
     headers:{
     "CONTENT-TYPE":"application/json"
@@ -1100,9 +1100,9 @@ if(Helper.type=="1"){
     if (response.statusCode == 200) {
     Map<String,dynamic> result=jsonDecode(decryption(response.body.toString().trim()).split("}")[0]+"}") as Map<String,dynamic>;
 
-   /* final Map<String,dynamic> result = {
+    /* final Map<String,dynamic> result = {
     "message":"success","user_id":"1"};*/
-   if(result["status"]=="1"){
+    if(result["status"]=="1"){
     setState((){
     successtxt= result["message"];
     errtxt="";
@@ -1132,11 +1132,11 @@ if(Helper.type=="1"){
     }
     }else{
     setState((){
-      successtxt="";
+    successtxt="";
     errtxt=response.statusCode.toString()+" :Please Check your Internet Connection And data";
     });
     }
-      }on TimeoutException catch(e) {
+    }on TimeoutException catch(e) {
     setState((){
     errtxt="Please Check your Internet Connection And data"
     ;successtxt="";
@@ -1145,46 +1145,46 @@ if(Helper.type=="1"){
 
     }on Exception catch(e){
     setState((){
-      errtxt=e.toString();
+    errtxt=e.toString();
     successtxt="";
 
     });
 
     }
-      }
+    }
     }, child: Text(
-      "Register",
+    "Register",
     ),
-      style: ElevatedButton.styleFrom(
-        primary: Colors.orange,
-        minimumSize: Size(150, 40),
-        shape: RoundedRectangleBorder( //to set border radius to button
-            borderRadius: BorderRadius.circular(10)
-        ),// NEW
-      ),
+    style: ElevatedButton.styleFrom(
+    primary: Colors.orange,
+    minimumSize: Size(150, 40),
+    shape: RoundedRectangleBorder( //to set border radius to button
+    borderRadius: BorderRadius.circular(10)
+    ),// NEW
+    ),
     ),
     ElevatedButton(onPressed: (){
     /*final Map<String,String> data = {"entry_date":formatted,"entry_time":formatted1,
     'qrcode':eventid["value"],"member_type":Helper.type.toString(),"name":fullname,"gender":dropdownvalue1,"dob":dateInput.text,"address":address,"city":city,"state":state_1,"pincode":postalcode,"country":country,"marital_status":marital,"wed_anniversary":anniversaryInput.text,"no_of_child":children,"email":email,"phone_no":phone,"occupation":occupation};
     print("testing data"+data.toString());*/
     setState(()
-        {
-          _fullnamecontroller.clear();
-          _addresscontroller.clear();
-          _emailcontroller.clear();
-          _citycontroller.clear();
-          _countrycontroller.clear();
-          _occupationcontroller.clear();
-          _phonecontroller.clear();
-          _postalcodecontroller.clear();
-          _statecontroller.clear();
-          dateInput.clear();
-          anniversaryInput.clear();
-          dropdownvalue1='Gender';
-         //state_1="";
-          marital="-";
-          children="0";
-        });
+    {
+    _fullnamecontroller.clear();
+    _addresscontroller.clear();
+    _emailcontroller.clear();
+    _citycontroller.clear();
+    _countrycontroller.clear();
+    _occupationcontroller.clear();
+    _phonecontroller.clear();
+    _postalcodecontroller.clear();
+    _statecontroller.clear();
+    dateInput.clear();
+    anniversaryInput.clear();
+    dropdownvalue1='Gender';
+    //state_1="";
+    marital="-";
+    children="0";
+    });
     }, child: Text(
     "Reset",
     ),
@@ -1204,274 +1204,274 @@ if(Helper.type=="1"){
     );
     }else if(Helper.type=="2"){
 
-      return  Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: SingleChildScrollView(
-      child: Container(
-      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-      child: Form(
+    return  Scaffold(
+    resizeToAvoidBottomInset: false,
+    body: SingleChildScrollView(
+    child: Container(
+    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+    child: Form(
     key:_formkey_1,
     child:Column(
-      children: <Widget>[
-        SizedBox(
-          height: 50,
-        ),
-        Container(
-          // margin: EdgeInsets.fromLTRB(0, 0, 5,5),
-          child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                //FlutterLogo(size: 100,),
-                SvgPicture.asset(
-                  "assets/images/newlogo.svg",
-                  width: 50,
-                  height: 50,
-                ),
-                IconButton(
-                onPressed: (){
-                Navigator.pushNamed(context, "/menu");
-                },
-                icon: Icon(
-                Icons.home, size: 30,color: Colors.orange,
-                )
-                ),
-              ]
-          ),
-        ) ,
+    children: <Widget>[
+    SizedBox(
+    height: 50,
+    ),
+    Container(
+    // margin: EdgeInsets.fromLTRB(0, 0, 5,5),
+    child: Row(
+    mainAxisSize: MainAxisSize.max,
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+    //FlutterLogo(size: 100,),
+    SvgPicture.asset(
+    "assets/images/newlogo.svg",
+    width: 50,
+    height: 50,
+    ),
+    IconButton(
+    onPressed: (){
+    Navigator.pushNamed(context, "/scanner");
+    },
+    icon: Icon(
+    Icons.home, size: 30,color: Colors.orange,
+    )
+    ),
+    ]
+    ),
+    ) ,
 
-      //Image(image: AssetImage('assets/images/UA_170_Logo.png'),width: 200,),
-      Text('Children Entry',
-      style: TextStyle(
-      fontSize: 18,
-      fontWeight: FontWeight.bold,
-        color: Colors.blue,
-      ),
-      textAlign: TextAlign.center,
-      ),
-      SizedBox(
-      height: 15,
-      ),
-      TextFormField(
-      controller: _fullnamecontroller,
+    //Image(image: AssetImage('assets/images/UA_170_Logo.png'),width: 200,),
+    Text('Children Entry',
+    style: TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.blue,
+    ),
+    textAlign: TextAlign.center,
+    ),
+    SizedBox(
+    height: 15,
+    ),
+    TextFormField(
+    controller: _fullnamecontroller,
 
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-      prefixIcon: Icon(Icons.account_circle_rounded, color:Colors.orange),
-      //labelText: "Full Name",
-      hintText: "Full Name",
-      fillColor: Colors.orange.shade50,
-      filled: true,
-      //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-        hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-        focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.orange,
-        ),
-        ),
-           enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
+    decoration: InputDecoration(
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    prefixIcon: Icon(Icons.account_circle_rounded, color:Colors.orange),
+    //labelText: "Full Name",
+    hintText: "Full Name",
+    fillColor: Colors.orange.shade50,
+    filled: true,
+    //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
 
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
-      ),
+    ),
     validator: (value) {
     if (value == null || value.isEmpty) {
     return 'Please enter name';
     }
     return null;
     },
-      onChanged: (value){
-      setState((){
-      fullname=value;
-      });
-      },
-      ),
-      SizedBox(
-      height: 15,
-      ),
-      DropdownButtonFormField(
-      value: _gender,
+    onChanged: (value){
+    setState((){
+    fullname=value;
+    });
+    },
+    ),
+    SizedBox(
+    height: 15,
+    ),
+    DropdownButtonFormField(
+    value: _gender,
 
-      validator: (value) {
-      if (value == null || value=="Gender") {
-      return 'Please select Gender';
-      }
-      return null;
-      },
-      items: items1.map((String items) {
-      return DropdownMenuItem(
-      value: items,
-      child: Text(items),
-      );
-      }).toList(),
-      onChanged: (String? newValue) {
-      setState(() {
-      _gender = newValue!;
-      });
-      },
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        prefixIcon: Icon(Icons.person, color:Colors.orange),
-      fillColor: Colors.orange.shade50,
-      filled: true,
-        hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(
-            color: Colors.orange,
-          ),
-        ),
-           enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    validator: (value) {
+    if (value == null || value=="Gender") {
+    return 'Please select Gender';
+    }
+    return null;
+    },
+    items: items1.map((String items) {
+    return DropdownMenuItem(
+    value: items,
+    child: Text(items),
+    );
+    }).toList(),
+    onChanged: (String? newValue) {
+    setState(() {
+    _gender = newValue!;
+    });
+    },
+    decoration: InputDecoration(
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    prefixIcon: Icon(Icons.person, color:Colors.orange),
+    fillColor: Colors.orange.shade50,
+    filled: true,
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
-      ),
-      ),
-      SizedBox(
-      height: 15,
-      ),
-      TextFormField(
-      controller: _teachercontroller,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        prefixIcon: Icon(Icons.person, color:Colors.orange),
-      //labelText: "Full Name",
-      hintText: "Teacher Name",
-      fillColor: Colors.orange.shade50,
-      filled: true,
-      //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-        hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(
-            color: Colors.orange,
-          ),
-        ),
-           enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    ),
+    ),
+    SizedBox(
+    height: 15,
+    ),
+    TextFormField(
+    controller: _teachercontroller,
+    decoration: InputDecoration(
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    prefixIcon: Icon(Icons.person, color:Colors.orange),
+    //labelText: "Full Name",
+    hintText: "Teacher Name",
+    fillColor: Colors.orange.shade50,
+    filled: true,
+    //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
-      ),
-      onChanged: (value){
-      setState((){
-      teacher=value;
-      });
-      },
-      ),
-      SizedBox(
-      height: 15,
-      ),
-      DropdownButtonFormField(
-      value: classgroup,
-      validator: (value) {
-      if (value == null || value=="-") {
-      return 'Please select age';
-      }
-      return null;
-      },
-      items: items4.map((String items) {
-      return DropdownMenuItem(
-      value: items,
-      child: Text(items),
-      );
-      }).toList(),
-      onChanged: (String? newValue) {
-      setState(() {
-      classgroup = newValue!;
-      });
-      },
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        prefixIcon: Icon(Icons.person, color:Colors.orange),
-      fillColor: Colors.orange.shade50,
-      filled: true,
-        hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(
-            color: Colors.orange,
-          ),
-        ),
-           enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    ),
+    onChanged: (value){
+    setState((){
+    teacher=value;
+    });
+    },
+    ),
+    SizedBox(
+    height: 15,
+    ),
+    DropdownButtonFormField(
+    value: classgroup,
+    validator: (value) {
+    if (value == null || value=="-") {
+    return 'Please select age';
+    }
+    return null;
+    },
+    items: items4.map((String items) {
+    return DropdownMenuItem(
+    value: items,
+    child: Text(items),
+    );
+    }).toList(),
+    onChanged: (String? newValue) {
+    setState(() {
+    classgroup = newValue!;
+    });
+    },
+    decoration: InputDecoration(
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    prefixIcon: Icon(Icons.person, color:Colors.orange),
+    fillColor: Colors.orange.shade50,
+    filled: true,
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
-      ),
-      ),
-      SizedBox(
-      height: 15,
-      ),
+    ),
+    ),
+    SizedBox(
+    height: 15,
+    ),
     (errtxt!="")?Text(errtxt,
     style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 12),
     ):(successtxt!="")?Text(successtxt,
@@ -1479,11 +1479,11 @@ if(Helper.type=="1"){
     ):Text("",
     style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
     ),
-      SizedBox(
-      height: 25,
-      ),
+    SizedBox(
+    height: 25,
+    ),
     ElevatedButton(
-        onPressed: ()async{
+    onPressed: ()async{
     if (_formkey_1.currentState!.validate()) {
     DateTime now = DateTime.now();
     DateFormat formatter = DateFormat('M/d/y');
@@ -1492,15 +1492,15 @@ if(Helper.type=="1"){
     String formatted1 = formatter1.format(now);
     //print(formatted);
 
-    var url = 'https://churchinapp.com/public/api/signinchildren';
+    var url = 'https://churchinapp.com/api/signinchildren';
     final Map<String,String> data = {"entry_date":formatted,"entry_time":formatted1,
     'qrcode':eventid["value"],"member_type":Helper.type.toString(),"name":fullname,"gender":_gender,"teacher":teacher,"class_group":classgroup};
     print("testing data"+data.toString());
- /*  setState(()
+    /*  setState(()
     {
     vaue.text=encryption(json.encode(data)).toString();
     });*/
- try{
+    try{
     final response = await http.post(Uri.parse(url),
     body:json.encode({"data":encryption(json.encode(data))}),
     encoding: Encoding.getByName('utf-8'),
@@ -1538,7 +1538,7 @@ if(Helper.type=="1"){
     });
     }
     }on TimeoutException catch(e) {
-   setState((){
+    setState((){
     errtxt="Please Check your Internet Connection And data";
     successtxt="";
     _formkey_1.currentState!.reset();
@@ -1554,14 +1554,14 @@ if(Helper.type=="1"){
     }
     }
     },
-        child: Text("Register",),
-      style: ElevatedButton.styleFrom(
-        primary: Colors.orange,
-        minimumSize: Size(150, 40),
-        shape: RoundedRectangleBorder( //to set border radius to button
-            borderRadius: BorderRadius.circular(10)
-        ),// NEW
-      ),
+    child: Text("Register",),
+    style: ElevatedButton.styleFrom(
+    primary: Colors.orange,
+    minimumSize: Size(150, 40),
+    shape: RoundedRectangleBorder( //to set border radius to button
+    borderRadius: BorderRadius.circular(10)
+    ),// NEW
+    ),
     ),
     ElevatedButton(onPressed: (){
     /*final Map<String,String> data = {"entry_date":formatted,"entry_time":formatted1,
@@ -1585,15 +1585,15 @@ if(Helper.type=="1"){
     ),// NEW
     ),
     ),
-      ],
-      ),
+    ],
+    ),
     )
-      ),
-      ),
-      );
+    ),
+    ),
+    );
 
 
-      }else if(Helper.type=="4"){
+    }else if(Helper.type=="4"){
     return  Scaffold(
     resizeToAvoidBottomInset: false,
     body:  SingleChildScrollView(
@@ -1621,7 +1621,7 @@ if(Helper.type=="1"){
     ),
     IconButton(
     onPressed: (){
-    Navigator.pushNamed(context, "/menu");
+    Navigator.pushNamed(context, "/scanner");
     },
     icon: Icon(
     Icons.home, size: 30,color: Colors.orange,
@@ -1876,7 +1876,7 @@ if(Helper.type=="1"){
     DateFormat formatter1 = DateFormat('jm');
     String formatted1 = formatter1.format(now);
     //print(formatted);
-    var url = 'https://churchinapp.com/public/api/eventregister';
+    var url = 'https://churchinapp.com/api/eventregister';
     final Map<String,String> data = {"entry_date":formatted,"entry_time":formatted1,
     'qrcode':eventid["value"],"member_type":Helper.type.toString(),"name":fullname,"email":email,"phone_no":phone,"occupation":occupation};
     print("testing data"+data.toString());
@@ -1986,41 +1986,41 @@ if(Helper.type=="1"){
     key:_formkey_2,
     child:Column(
     children: <Widget>[
-      SizedBox(
-        height: 50,
-      ),
-      Container(
-        // margin: EdgeInsets.fromLTRB(0, 0, 5,5),
-        child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              //FlutterLogo(size: 100,),
-              SvgPicture.asset(
-                "assets/images/newlogo.svg",
-                width: 50,
-                height: 50,
-              ),
-            //SizedBox(width: 100,),
-            IconButton(
-              onPressed: (){
-                   Navigator.pushNamed(context, "/menu");
-               },
-              icon: Icon(
-                  Icons.home, size: 30,color: Colors.orange,
-              )
-            ),
-          ]
-        ),
-      ) ,
+    SizedBox(
+    height: 50,
+    ),
+    Container(
+    // margin: EdgeInsets.fromLTRB(0, 0, 5,5),
+    child: Row(
+    mainAxisSize: MainAxisSize.max,
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+    //FlutterLogo(size: 100,),
+    SvgPicture.asset(
+    "assets/images/newlogo.svg",
+    width: 50,
+    height: 50,
+    ),
+    //SizedBox(width: 100,),
+    IconButton(
+    onPressed: (){
+    Navigator.pushNamed(context, "/scanner");
+    },
+    icon: Icon(
+    Icons.home, size: 30,color: Colors.orange,
+    )
+    ),
+    ]
+    ),
+    ) ,
 
     //Image(image: AssetImage('assets/images/UA_170_Logo.png'),width: 200,),
     Text('Current Member Entry',
     style: TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,
-      color: Colors.blue,
+    color: Colors.blue,
     ),
     textAlign: TextAlign.center,
     ),
@@ -2030,46 +2030,46 @@ if(Helper.type=="1"){
     TextFormField(
     controller: _fullnamecontroller,
     validator: (value) {
-      if (value == null || value.isEmpty) {
-      return 'Please enter name';
-      }
-      return null;
-      },
+    if (value == null || value.isEmpty) {
+    return 'Please enter name';
+    }
+    return null;
+    },
     decoration: InputDecoration(
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-      prefixIcon: Icon(Icons.account_circle_rounded,color:Colors.orange),
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    prefixIcon: Icon(Icons.account_circle_rounded,color:Colors.orange),
     //labelText: "Full Name",
     hintText: "Full Name",
     fillColor: Colors.orange.shade50,
     filled: true,
     //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-      hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-          color: Colors.orange,
-        ),
-      ),
-         enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
     ),
     onChanged: (value){
@@ -2083,45 +2083,45 @@ if(Helper.type=="1"){
     ),
     TextFormField(
     controller: _emailcontroller,
-      validator:(value)=>FieldValidator.validateEmail(value!),
+    validator:(value)=>FieldValidator.validateEmail(value!),
     decoration: InputDecoration(
-      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-      prefixIcon: Icon(Icons.email,color:Colors.orange),
+    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    prefixIcon: Icon(Icons.email,color:Colors.orange),
     //labelText: "Full Name",
     hintText: "Email",
     fillColor: Colors.orange.shade50,
     filled: true,
     //labelStyle: TextStyle(fontSize: 15,color: Colors.blue),
-      hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-          color: Colors.orange,
-        ),
-      ),
-         enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.deepOrange.shade200,
-        width: 1.0,
-        ),
-        ),
-               errorBorder: new OutlineInputBorder(
-     borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    hintStyle: TextStyle(fontSize: 16.0, color: Colors.orange, fontWeight: FontWeight.bold),
+    focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.orange,
+    ),
+    ),
+    enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.deepOrange.shade200,
+    width: 1.0,
+    ),
+    ),
+    errorBorder: new OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     ),
     focusedErrorBorder: new OutlineInputBorder(
-   borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(
-        color: Colors.red.shade200,
-        width: 1.0,
-        ),
+    borderRadius: BorderRadius.circular(16),
+    borderSide: BorderSide(
+    color: Colors.red.shade200,
+    width: 1.0,
+    ),
     )
     ),
-      keyboardType: TextInputType.emailAddress,
+    keyboardType: TextInputType.emailAddress,
     onChanged: (value){
     setState((){
     email=value;
@@ -2142,8 +2142,8 @@ if(Helper.type=="1"){
     height: 25,
     ),
     ElevatedButton(
-      onPressed: () async{
-        if (_formkey_2.currentState!.validate()) {
+    onPressed: () async{
+    if (_formkey_2.currentState!.validate()) {
 
     DateTime now = DateTime.now();
     DateFormat formatter = DateFormat('M/d/y');
@@ -2151,7 +2151,7 @@ if(Helper.type=="1"){
     DateFormat formatter1 = DateFormat('jm');
     String formatted1 = formatter1.format(now);
     //print(formatted);
-    var url = 'https://churchinapp.com/public/api/currentmember';
+    var url = 'https://churchinapp.com/api/currentmember';
     final Map<String,String> data = {"entry_date":formatted,"entry_time":formatted1,
     'qrcode':eventid["value"],"member_type":Helper.type.toString(),"name":fullname,"email":email};
     print("testing data"+data.toString());
@@ -2188,7 +2188,7 @@ if(Helper.type=="1"){
     }
     }else{
     setState((){
-      successtxt="";
+    successtxt="";
     errtxt="Please Check your Internet Connection And data";
     });
     }/*
@@ -2197,7 +2197,7 @@ if(Helper.type=="1"){
     });*/
     }on TimeoutException catch (_) {
     setState((){
-      successtxt="";
+    successtxt="";
     errtxt="Please Check your Internet Connection And data";
     });
     //return false;
@@ -2210,14 +2210,14 @@ if(Helper.type=="1"){
 
     }
     }
-       }, child: Text("Register",),
-      style: ElevatedButton.styleFrom(
-        primary: Colors.orange,
-        minimumSize: Size(150, 40),
-        shape: RoundedRectangleBorder( //to set border radius to button
-            borderRadius: BorderRadius.circular(10)
-        ),// NEW
-      ),
+    }, child: Text("Register",),
+    style: ElevatedButton.styleFrom(
+    primary: Colors.orange,
+    minimumSize: Size(150, 40),
+    shape: RoundedRectangleBorder( //to set border radius to button
+    borderRadius: BorderRadius.circular(10)
+    ),// NEW
+    ),
     ),
     ElevatedButton(onPressed: (){
     /*final Map<String,String> data = {"entry_date":formatted,"entry_time":formatted1,
