@@ -86,15 +86,26 @@ class _ScannerPageState extends State<ScannerPage> {
                     //margin: EdgeInsets.fromLTRB(0, 0, 5,5),
                     child: Row(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           //FlutterLogo(size: 100,),
                           SvgPicture.asset(
                             "assets/images/newlogo.svg",
-                            width: 70,
-                            height: 70,
+                            width: 50,
+                            height: 50,
                           ),
+                          /*TextButton(
+                              onPressed: (){
+                                Navigator.pushNamed(context, "/policy");
+                              },
+                           child:Text("Privacy Policy" ,
+                             textAlign: TextAlign.start,
+                             style: TextStyle(
+                                 fontSize: 16,
+                                 fontWeight: FontWeight.w800,
+                                 color: Colors.white),
+                           )                          ),*/
                         ]
                     ),
                   ),
@@ -128,6 +139,35 @@ class _ScannerPageState extends State<ScannerPage> {
               ),
             ) ,*/
               ),
+            Column(
+
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                      onPressed: (){
+                        Navigator.pushNamed(context, "/policy");
+                      },
+                      child:Text("Privacy Policy" ,
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.blue,
+                            decoration: TextDecoration.underline,
+
+                        ),
+                      )                          ),
+              ],
+            ),
+            )
+
+              ],
+            )
               /*Expanded(
               flex: 1,
               child: Center(
