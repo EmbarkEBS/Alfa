@@ -38,7 +38,9 @@ class _MenuPageState extends State<MenuPage> {
     final eventid = ModalRoute.of(context)!.settings.arguments as Map<String,dynamic>;
     return
       SingleChildScrollView(
-          child:Stack(alignment: Alignment.bottomCenter, children: <Widget>[
+          child:Stack(
+    alignment: Alignment.bottomCenter,
+    children: <Widget>[
             /*Container(
           color: lightening_yellow,
           alignment: Alignment.center,
@@ -290,7 +292,36 @@ class _MenuPageState extends State<MenuPage> {
 
                 ],
               ),
-            )
+            ),
+    Column(
+
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: [
+    Container(
+    child: Row(
+    crossAxisAlignment: CrossAxisAlignment.end,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+    TextButton(
+    onPressed: (){
+    Navigator.pushNamed(context, "/policy");
+    },
+    child:Text("Privacy Policy" ,
+    textAlign: TextAlign.start,
+    style: TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w800,
+    color: Colors.blue,
+    decoration: TextDecoration.underline,
+
+    ),
+    )                          ),
+    ],
+    ),
+    )
+
+    ],
+    )
           ]) );
   }
 }
