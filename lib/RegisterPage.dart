@@ -1196,6 +1196,37 @@ class _RegisterPageState extends State<RegisterPage> {
     ),// NEW
     ),
     ),
+    Column(
+
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: [
+    SizedBox(height: 20,),
+    Container(
+    child: Row(
+    crossAxisAlignment: CrossAxisAlignment.end,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+
+    TextButton(
+    onPressed: (){
+    Navigator.pushNamed(context, "/policy");
+    },
+    child:Text("Privacy Policy" ,
+    textAlign: TextAlign.start,
+    style: TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w800,
+    color: Colors.blue,
+    decoration: TextDecoration.underline
+
+    ),
+    )                          ),
+    ],
+    ),
+    )
+
+    ],
+    ),
     ],
     ),
     )
@@ -1585,6 +1616,37 @@ class _RegisterPageState extends State<RegisterPage> {
     ),// NEW
     ),
     ),
+    Column(
+
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: [
+    SizedBox(height: 20,),
+    Container(
+    child: Row(
+    crossAxisAlignment: CrossAxisAlignment.end,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+
+    TextButton(
+    onPressed: (){
+    Navigator.pushNamed(context, "/policy");
+    },
+    child:Text("Privacy Policy" ,
+    textAlign: TextAlign.start,
+    style: TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w800,
+    color: Colors.blue,
+    decoration: TextDecoration.underline
+
+    ),
+    )                          ),
+    ],
+    ),
+    )
+
+    ],
+    ),
     ],
     ),
     )
@@ -1969,7 +2031,39 @@ class _RegisterPageState extends State<RegisterPage> {
     ),// NEW
     ),
     ),
+    Column(
+
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: [
+    SizedBox(height: 20,),
+    Container(
+    child: Row(
+    crossAxisAlignment: CrossAxisAlignment.end,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+
+    TextButton(
+    onPressed: (){
+    Navigator.pushNamed(context, "/policy");
+    },
+    child:Text("Privacy Policy" ,
+    textAlign: TextAlign.start,
+    style: TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w800,
+    color: Colors.blue,
+    decoration: TextDecoration.underline
+
+    ),
+    )                          ),
     ],
+    ),
+    )
+
+    ],
+    ),
+    ],
+
     ),
     ),
     )
@@ -2238,6 +2332,37 @@ class _RegisterPageState extends State<RegisterPage> {
     borderRadius: BorderRadius.circular(10)
     ),// NEW
     ),
+    ),
+    Column(
+
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: [
+    SizedBox(height: 20,),
+    Container(
+    child: Row(
+    crossAxisAlignment: CrossAxisAlignment.end,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+
+    TextButton(
+    onPressed: (){
+    Navigator.pushNamed(context, "/policy");
+    },
+    child:Text("Privacy Policy" ,
+    textAlign: TextAlign.start,
+    style: TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w800,
+    color: Colors.blue,
+    decoration: TextDecoration.underline
+
+    ),
+    )                          ),
+    ],
+    ),
+    )
+
+    ],
     ),
     ],
     ),
