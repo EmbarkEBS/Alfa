@@ -7,6 +7,7 @@ import 'MenuPage.dart';
 import 'RegisterPage.dart';
 import 'ScannerPage.dart';
 import 'helpers/helper.dart';
+import 'PolicyPage.dart';
 
 void main() {
   
@@ -88,6 +89,7 @@ class AlfaApp extends StatelessWidget {
                   //MyHomePage(title: 'Start Now'),
                   routes: {
                             '/scanner': (context) => ScannerPage(),
+                            '/policy': (context) => PolicyPage(),
                             '/register': (context) => RegisterPage(),
                             '/menu': (context) => MenuPage(),
                   },
