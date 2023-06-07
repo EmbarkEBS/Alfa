@@ -48,18 +48,17 @@
 		<key>NSCameraUsageDescription</key>
 		<string>Access the camera for scanning QR code</string>
 		<key>CFBundleURLTypes</key>
-	        <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-        <key>CFBundleTypeRole</key>
-        <string>Editor</string>
-        <key>CFBundleURLName</key>
-        <string>3ds.stripesdk.io</string>
-        <key>CFBundleURLSchemes</key>
-        <array>
-            <string>stripesdk</string>
-        </array>
-        </dict>
-    </array>
+    		<array>
+        	<dict>
+        		<key>CFBundleTypeRole</key>
+        		<string>Editor</string>
+        		<key>CFBundleURLName</key>
+        		<string>3ds.stripesdk.io</string>
+        		<key>CFBundleURLSchemes</key>
+        		<array>
+            			<string>stripesdk</string>
+       			</array>
+        	</dict>
+    		</array>
 	</dict>
 </plist>
