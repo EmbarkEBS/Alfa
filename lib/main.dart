@@ -1,10 +1,12 @@
+import 'dart:async';
+
 import 'package:churchIn/VerificationPage.dart';
 import 'package:churchIn/utils/colors.dart';
 import 'package:churchIn/widgets/button_plain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:simple_splashscreen/simple_splashscreen.dart';
+//import 'package:simple_splashscreen/simple_splashscreen.dart';
 //import 'package:splash_view/splash_view.dart';
 //import 'package:your_splash/your_splash.dart';
 //import 'package:splashscreen/splashscreen.dart';
@@ -97,12 +99,13 @@ class AlfaApp extends StatelessWidget {
           ),
         ),
       ),*/
-      home: Simple_splashscreen(
+      home: AlfaSplashScreen(),
+     /*Simple_splashscreen(
         context: context,
         gotoWidget: MyHomePage(title: 'start now'),
         splashscreenWidget: AlfaSplashScreen(),
         timerInSeconds: 5,
-      ),
+      ),*/
       //MyHomePage(title: 'Start Now'),
       routes: {
         '/login': (context) =>LoginPage(),
@@ -127,6 +130,17 @@ class AlfaSplashScreen extends StatefulWidget {
 }
 
 class _AlfaSplashScreenState extends State<AlfaSplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 5),
+            ()=>Navigator.pushReplacement(context,
+            MaterialPageRoute(builder:
+                (context) => MyHomePage(title: 'start now')
+            )
+        )
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
