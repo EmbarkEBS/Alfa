@@ -340,9 +340,7 @@ class _ScannerPageState extends State<ScannerPage> {
     this.controller = controller;
     // });
     controller.scannedDataStream.listen((scanData) async {
-      this.controller
-      !.pauseCamera();
-      this.controller!.resumeCamera();
+
       setState(() {
       this.result = scanData;
       });
@@ -363,10 +361,12 @@ class _ScannerPageState extends State<ScannerPage> {
       });
       }
       }
-      this.controller!.resumeCamera();
+      //this.controller!.resumeCamera();
       // controller?.dispose();
 
       });
+    this.controller!.pauseCamera();
+    this.controller!.resumeCamera();
   }
 
   void _onPermissionSet(BuildContext context, QRViewController ctrl, bool p) {

@@ -1036,7 +1036,7 @@ class _RegisterPageState extends State<RegisterPage> {
     (errtxt!="" && errtxt!=null)?Text(errtxt,
     style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 12),
     ):(successtxt!="")?Text(successtxt,
-    style: TextStyle(color: Colors.purple.shade900, fontWeight: FontWeight.bold, fontSize: 12),
+    style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 12),
     ):Text("",
     style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
     ),
@@ -1077,7 +1077,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     /*   final Map<String,dynamic> result = {
             "message":"success","user_id":"1"};*/
-    if(result["status"]=="1"){
+    if(result["status"]=="success"){
     setState((){
     successtxt=result["message"];
     errtxt="";
@@ -1085,7 +1085,7 @@ class _RegisterPageState extends State<RegisterPage> {
     _emailcontroller.clear();
     _phonecontroller.clear();
     _occupationcontroller.clear();
-    isShow=true;
+    //isShow=true;
     });
     } else{
     setState((){
